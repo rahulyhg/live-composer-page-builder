@@ -81,7 +81,7 @@ final class DSLC_Scripts{
 		if ( $dslc_active && is_user_logged_in() && current_user_can( DS_LIVE_COMPOSER_CAPABILITY ) ) {
 
 			add_action( 'after_wp_tiny_mce', array( __CLASS__, 'callback_tinymce' ) );
-
+			wp_enqueue_editor();
 			ob_start();
 			wp_editor( '', 'enqueue_tinymce_scripts' );
 			ob_end_clean();
